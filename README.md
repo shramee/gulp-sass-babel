@@ -1,6 +1,6 @@
-# Starter for HTML/CSS/JS projects
+# HTML/CSS/JS starter powered by gulp to use SASS and Babel (ES6)
 
-Includes Gulp to compile Sass into CSS, along with Autoprefixer and Browser Sync.
+Includes Gulp to compile Sass into CSS, along with Autoprefixer, Babel into ES5 JS and Browser Sync.
 
 ## Setup
 
@@ -12,7 +12,7 @@ Then install Gulp using `npm install -g gulp`. This installs Gulp globally and i
 
 Clone this repo to your local computer using this command:
 
-    git clone https://git@github.com/cssanimation/gulp-sass-starter.git starter
+    git clone https://git@github.com/shramee/gulp-sass-babel.git starter
 
 With the files downloaded, navigate to your `starter` folder on the command line (or Terminal) and run `npm install` to set things up.
 
@@ -22,11 +22,11 @@ With this set up, you should now be able to run:
 
     gulp
 
-This will process any Sass (SCSS) files and launch a web browser showing the current files. Making changes to the files should result in the page updating automatically.
+This will process any Sass (SCSS) files, translate ES6 to ES5 and launch a web browser showing the current files. Making changes to the files should result in the page updating automatically.
 
 ## Questions
 
-Drop me a line at [hello@cssanimation.rocks](hello@cssanimation.rocks) with any questions or thoughts. Pull requests welcomed!
+Drop me a line at [shramee.srivastav@gmail.com](shramee.srivastav@gmail.com) with any questions or thoughts. Pull requests welcomed!
 
 ### License
 
