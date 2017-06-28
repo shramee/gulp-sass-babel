@@ -13,9 +13,17 @@ gulp.task( 'styles', function () {
 		.pipe( browserSync.reload( {stream: true} ) );
 } );
 
+gulp.task('vendorScripts', function() {
+	gulp.src('./src/js/vendor/**/*.js')
+			.pipe(gulp.dest('public/js/vendor'));
+});
+
 gulp.task( 'scripts', function () {
 	return gulp
-		.src( ['./src/js/**/*.js'] )
+		.src( [
+			'./src/js/!(vendor)**/!(app)*.js',
+			'./src/js/app.js'
+		] )
 		.pipe( $.plumber() )
 		.pipe( $.babel( {
 			presets: ['es2015']
@@ -70,6 +78,8 @@ gulp.task( 'watch', function () {
 	gulp.watch( 'src/sass/**/*.scss', ['styles', browserSync.reload] );
 	// Watch .js files
 	gulp.watch( 'src/js/*.js', ['scripts', browserSync.reload] );
+	// Watch .js files
+	gulp.watch( 'src/js/vendor/*', ['vendorScripts', browserSync.reload] );
 	// Watch image files
 	gulp.watch( 'src/images/**/*', ['images', browserSync.reload] );
 } );
@@ -77,6 +87,7 @@ gulp.task( 'watch', function () {
 gulp.task( 'default', function () {
 	gulp.start(
 		'styles',
+		'vendorScripts',
 		'scripts',
 		'images',
 		'html',

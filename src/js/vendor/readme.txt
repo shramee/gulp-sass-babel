@@ -1,0 +1,1 @@
+Files placed here will be copied to public/js/vendor without any processing and should be added in HTML.
