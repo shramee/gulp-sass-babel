@@ -26,7 +26,7 @@ gulp.task( 'scripts', function () {
 		] )
 		.pipe( $.plumber() )
 		.pipe( $.babel( {
-			presets: ['es2015']
+			presets: ['babel-preset-es2015'].map(require.resolve)
 		} ) )
 		.pipe( $.concat( 'app.js' ) )
 		.pipe( $.uglify() )
